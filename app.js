@@ -45,16 +45,16 @@ const tiendasSchema = {
 
 const Tienda = mongoose.model("Tienda", tiendasSchema);
 
-// const tienda1 = new Tienda ({
-//   name: "El Infiernito",
-//   description: "Bar con vista al mar.",
-//   phone: "12345",
-//   whatspp: "67890",
-//   imagen: "ninjutsu.png",
-//   status: "aprobado"
-// });
+const tienda1 = new Tienda ({
+  name: "El Infiernito",
+  description: "Bar con vista al mar.",
+  phone: "12345",
+  whatsapp: "67890",
+  imagen: "ninjutsu.png",
+  status: "aprobado"
+});
 
-// const defaultTiendas = [tienda1];
+const defaultTiendas = [tienda1];
 
 const listSchema = {
   name: String,
@@ -63,11 +63,11 @@ const listSchema = {
 
 const List = mongoose.model("List", listSchema);
 
-// const list = new List({
-//   name: "Cuajimalpa",
-//   tiendas: defaultTiendas
-// });
-// list.save();
+const list = new List({
+  name: "Cuajimalpa",
+  tiendas: defaultTiendas
+});
+list.save();
 
 app.get("/", function(req, res) {
 
