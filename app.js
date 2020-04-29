@@ -46,8 +46,8 @@ const tiendasSchema = {
 const Tienda = mongoose.model("Tienda", tiendasSchema);
 
 const tienda1 = new Tienda ({
-  name: "El Infiernito",
-  description: "Bar con vista al mar.",
+  name: "Ejemplo negocio",
+  description: "Ejemplo de negocio",
   phone: "12345",
   whatsapp: "67890",
   imagen: "ninjutsu.png",
@@ -64,7 +64,7 @@ const listSchema = {
 const List = mongoose.model("List", listSchema);
 
 const list = new List({
-  name: "Cuajimalpa",
+  name: "Santa Fe",
   tiendas: defaultTiendas
 });
 list.save();
