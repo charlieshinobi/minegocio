@@ -1,0 +1,21 @@
+<%- include("header") -%>
+
+  <div class="box" id="heading">
+    <h1> <%= listTitle %> </h1>
+  </div>
+
+  
+
+    <% newListTiendas.forEach(function(tienda){ %>
+        <div class="box-tienda">
+          <p><strong><%=  tienda.name  %></strong></p>
+          <p><%=  tienda.description  %></p>
+          <p>Celular: <a href="tel:+52<%=  tienda.whatsapp  %>"><%=  tienda.whatsapp  %></a></p>
+          <p>Teléfono: <a href="tel:+52<%=  tienda.phone  %>"><%=  tienda.phone  %></a></p>
+          <p><a href="uploads/<%=  tienda.imagen  %>" target="_blank">Ver menú</a></p>
+        </div>
+    <% }) %>
+      
+  
+
+<%- include("footer") -%>

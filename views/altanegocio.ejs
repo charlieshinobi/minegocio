@@ -1,0 +1,25 @@
+<%- include("header") -%>
+
+  <div class="box" id="heading">
+    <h1> Publica tu negocio </h1>
+  </div>
+
+  <div class="box">
+
+    
+      <form class="item" enctype="multipart/form-data" action="/altanegocio" method="post">
+        <input type="text" name="nombre" placeholder="Nombre Negocio" autocomplete="off" maxlength="20" required>
+        <input type="text" name="descripcion" placeholder="Descripción" autocomplete="off" required>
+        <select name="list">
+          <option value="Cuajimalpa" selected>Cuajimalpa</option>
+          <option value="Santa Fe">Santa Fe</option>
+        </select>
+        <input type="text" name="celular" placeholder="Celular/Whatsapp" autocomplete="off" required>
+        <input type="text" name="telefono" placeholder="Teléfono fijo" autocomplete="off" required>
+        <input type="file" name="avatar" class="custom-file-input" required />
+        <button type="submit" name="alta">+</button>
+      </form>
+      
+  </div>
+
+<%- include("footer") -%>
