@@ -54,7 +54,7 @@ const Tienda = mongoose.model("Tienda", tiendasSchema);
 //   status: "aprobado"
 // });
 
-const defaultTiendas = [tienda1];
+// const defaultTiendas = [tienda1];
 
 const listSchema = {
   name: String,
