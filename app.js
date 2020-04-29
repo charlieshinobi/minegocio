@@ -27,9 +27,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 //Localhost
-mongoose.connect("mongodb://localhost:27017/mitienda", {useNewUrlParser: true, useUnifiedTopology: true});
+//mongoose.connect("mongodb://localhost:27017/mitienda", {useNewUrlParser: true, useUnifiedTopology: true});
 //Cloud Atlas
-//mongoose.connect("mongodb+srv://charlie:Pum45Un4m@cluster0-s0xif.mongodb.net/todolistDB", {useNewUrlParser: true});
+mongoose.connect("mongodb+srv://charlie:Pum45Un4m@cluster0-s0xif.mongodb.net/mitienda", {useNewUrlParser: true});
 
 console.log(__dirname);
 
