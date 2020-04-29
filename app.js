@@ -45,14 +45,14 @@ const tiendasSchema = {
 
 const Tienda = mongoose.model("Tienda", tiendasSchema);
 
-const tienda1 = new Tienda ({
-  name: "Ejemplo negocio",
-  description: "Descripción de negocio",
-  phone: "12345",
-  whatsapp: "67890",
-  imagen: "ejemplo-menu.jpg",
-  status: "aprobado"
-});
+// const tienda1 = new Tienda ({
+//   name: "Ejemplo negocio",
+//   description: "Descripción de negocio",
+//   phone: "12345",
+//   whatsapp: "67890",
+//   imagen: "ejemplo-menu.jpg",
+//   status: "aprobado"
+// });
 
 const defaultTiendas = [tienda1];
 
@@ -63,17 +63,17 @@ const listSchema = {
 
 const List = mongoose.model("List", listSchema);
 
-const list = new List({
-  name: "cuajimalpa",
-  tiendas: defaultTiendas
-});
-list.save();
+// const list = new List({
+//   name: "cuajimalpa",
+//   tiendas: defaultTiendas
+// });
+// list.save();
 
-const list2 = new List({
-  name: "santafe",
-  tiendas: defaultTiendas
-});
-list2.save();
+// const list2 = new List({
+//   name: "santafe",
+//   tiendas: defaultTiendas
+// });
+// list2.save();
 
 app.get("/", function(req, res) {
 
