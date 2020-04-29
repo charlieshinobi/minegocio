@@ -31,7 +31,7 @@ app.use(express.static("public"));
 //Cloud Atlas
 mongoose.connect("mongodb+srv://charlie:Pum45Un4m@cluster0-s0xif.mongodb.net/mitienda", {useNewUrlParser: true});
 
-console.log(__dirname);
+
 
 
 const tiendasSchema = {
@@ -47,10 +47,10 @@ const Tienda = mongoose.model("Tienda", tiendasSchema);
 
 const tienda1 = new Tienda ({
   name: "Ejemplo negocio",
-  description: "Ejemplo de negocio",
+  description: "Descripción de negocio",
   phone: "12345",
   whatsapp: "67890",
-  imagen: "ninjutsu.png",
+  imagen: "ejemplo-menu.jpg",
   status: "aprobado"
 });
 
@@ -64,10 +64,16 @@ const listSchema = {
 const List = mongoose.model("List", listSchema);
 
 const list = new List({
-  name: "Santa Fe",
+  name: "cuajimalpa",
   tiendas: defaultTiendas
 });
 list.save();
+
+const list2 = new List({
+  name: "santafe",
+  tiendas: defaultTiendas
+});
+list2.save();
 
 app.get("/", function(req, res) {
 
@@ -82,14 +88,15 @@ app.get("/altanegocio", function(req, res) {
 });
 
 app.get("/:customListName", function(req, res){
-  const customListName = _.capitalize(req.params.customListName);
+  //const customListName = _.capitalize(req.params.customListName);
+  const customListName = req.params.customListName;
   List.findOne({name: customListName}, function(err, foundList){
     if(!err){
       if(!foundList){
           res.redirect("/");
       } else{
         //Show an existing list
-        res.render("tiendas", {listTitle: foundList.name, newListTiendas: foundList.tiendas});
+        res.render("tiendas", {listTitle: _.capitalize(foundList.name), newListTiendas: foundList.tiendas});
       }
     } 
   });

@@ -3,16 +3,18 @@
   <div class="box" id="heading">
     <h1> <%= listTitle %> </h1>
   </div>
-
   
-
+  <div class="box-tienda">
+      <p>¿Vives en <a href="/cuajimalpa">Cuajimalpa</a> o <a href="/santafe">Santa Fe</a>? <br>Aquí encontrarás los negocios que tienen servicio a domicilio.</p>
+      <p>¿Quieres dar de alta tu negocio, es muy fácil, <a href="/altanegocio">haz clic aquí.</a></p>
+   </div>
     <% newListTiendas.forEach(function(tienda){ %>
         <div class="box-tienda">
           <p><strong><%=  tienda.name  %></strong></p>
           <p><%=  tienda.description  %></p>
           <p>Celular: <a href="tel:+52<%=  tienda.whatsapp  %>"><%=  tienda.whatsapp  %></a></p>
           <p>Teléfono: <a href="tel:+52<%=  tienda.phone  %>"><%=  tienda.phone  %></a></p>
-          <p><a href="uploads/<%=  tienda.imagen  %>" target="_blank">Ver menú</a></p>
+          <p><a href="uploads/<%=  tienda.imagen  %>">Ver menú</a></p>
         </div>
     <% }) %>
       
