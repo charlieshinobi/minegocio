@@ -3,7 +3,7 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm install -y
+        - npm init -y
         - npm install express
         - npm install body-parser
         - npm install mongoose
